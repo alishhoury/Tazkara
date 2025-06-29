@@ -8,4 +8,6 @@ $query = "CREATE TABLE seats(
           number INT NOT NULL,
           seat_type ENUM('regular', 'vip') NOT NULL DEFAULT 'regular',
           status ENUM('available', 'booked') NOT NULL DEFAULT 'available',
-          "
+          )";
+
+$execute = $mysqli->query($query);
