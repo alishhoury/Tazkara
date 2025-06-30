@@ -6,7 +6,12 @@ document.addEventListener('DOMContentLoaded', function() {
             cards.innerHTML = films.map(film => `
                 <div class="film-card">
                     <img src="${film.image}" alt="${film.title}">
-                    <div class="film-card-title">${film.title}</div>
+                    <div class="film-overlay">
+                    <div class="overlay-content">
+                        <h2>${film.title}</h2>
+                        <p>${film.description}</p>
+                    </div>
+                    </div>
                 </div>
             `).join('');
         });
