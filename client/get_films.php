@@ -1,6 +1,6 @@
 <?php
 $films = [
-    ["title" => "BRAD PITT", "image" => "assets/brad pitt.jpg", "description" => "Action"],
+    ["title" => "F1", "image" => "assets/brad pitt.jpg", "description" => "Action"],
     ["title" => "MEGAN 2.0", "image" => "assets/megan 2.0.jpg", "description" => "Action"],
     ["title" => "RESTART", "image" => "assets/restart.jpg", "description" => "Comedy"],
     ["title" => "FIGHT OR FLIGHT", "image" => "assets/fight or flight.jpg", "description" => "Action"],
