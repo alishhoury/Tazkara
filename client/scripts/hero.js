@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         ${videoEmbed}
                         </div>
                          <button>View Showtimes</button>
+                         <p>Genre:${film.genre}<p>
+                        <p>Running Time: ${film.duration}<p>
+                        <p>Release Date: ${film.realseDate}<p>
                 
                     </div>
                 `;
