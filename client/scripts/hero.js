@@ -12,14 +12,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (film.video) {
                     const youtubeMatch = film.video.match(/(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)/);
                     if (youtubeMatch){
-                        videoEmbed = `<iframe src="https://www.youtube.com/embed/${youtubeMatch[1]}" </iframe>`;
+                        videoEmbed = `<iframe src="https://www.youtube.com/embed/${youtubeMatch[1]}"> </iframe>`;
                     }
                 }
                 cards.innerHTML = `
                     <div class="hero-section">
+                    <h2>${film.title}</h2>
                         <img src="${film.image}" alt="${film.title}">
-                        <h2>${film.title}</h2>
                         ${videoEmbed}
+                         <button>View Showtimes</button>
+                
                     </div>
                 `;
             }
