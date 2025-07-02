@@ -144,6 +144,14 @@ button:hover {
     margin-bottom: 1.5rem ;
 }
 
+.showtimes-list {
+
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+.showtimes-list li {
+    margin-top: 1rem;}
 
 
 
