@@ -120,7 +120,7 @@ h2 {
 }
 
 button {
-    position: absolute;
+    position: relative;
     background-color: #333;
     color: white;
     padding: 10px 20px;
@@ -136,6 +136,8 @@ button {
 button:hover {
     border-radius: 15px;
 }
+
+
 
 
 
