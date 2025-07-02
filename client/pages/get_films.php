@@ -18,7 +18,7 @@ $films = [
         "title" => "MEGAN 2.0",
         "image" => "./assets/megan 2.0.jpg",
         "genre" => "Action",
-        "video" => "https://youtu.be/fPGfaQtEUII",
+        "video" => "https://www.youtube.com/watch?v=fPGfaQtEUII&t=4s",
         "description" => "Sequel to the hit action movie MEGAN.",
         "showtimes" => [
             ["time" => "11:00 AM", "location" => "Hall 3"],
@@ -98,7 +98,7 @@ $films = [
         ]
     ],
     [
-        "id" => 9, 
+        "id" => 9,
         "title" => "ELIO",
         "image" => "./assets/elio.jpg",
         "genre" => "Animation",
