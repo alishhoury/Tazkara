@@ -19,7 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="hero-section">
                     <h2>${film.title}</h2>
                         <img src="${film.image}" alt="${film.title}">
+                        <div class = "trailer">
                         ${videoEmbed}
+                        </div>
                          <button>View Showtimes</button>
                 
                     </div>
