@@ -137,10 +137,12 @@ button:hover {
     border-radius: 15px;
 }
 
-
-
-
-
+.info {
+    padding: 1.3rem;
+}
+.info p {
+    margin-bottom: 1.5rem ;
+}
 
 
 

@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div><button>View Showtimes</button></div>
          <div class="info">
-            <p>Genre: ${film.genre}</p>
-            <p>Running Time: ${film.duration ? film.duration : 'N/A'}</p>
-            <p>Release Date: ${film.realseDate ? film.realseDate : 'N/A'}</p>
+            <p><strong>Genre</strong>:${film.genre}</p>
+            <p><strong>Running Time:</strong> ${film.duration ? film.duration : 'N/A'}</p>
+            <p><strong>Release Date:</strong> ${film.realseDate ? film.realseDate : 'N/A'}</p>
          </div>
     </div>
                          `;
