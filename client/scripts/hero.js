@@ -24,11 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="trailer">
             ${videoEmbed}
         </div>
-        <div><button>View Showtimes</button></div>
+        <div><a href="#showtimes" class="btn">View Showtimes</a></div>
          <div class="info">
             <p><strong>Genre</strong>:${film.genre}</p>
-            <p><strong>Running Time:</strong> ${film.duration ? film.duration : 'N/A'}</p>
-            <p><strong>Release Date:</strong> ${film.realseDate ? film.realseDate : 'N/A'}</p>
+            <p><strong>Running Time:</strong> ${film.duration }</p>
+            <p><strong>Release Date:</strong> ${film.realseDate  }</p>
+            <p><strong>Description:</strong> ${film.description}
          </div>
     </div>
                          `;

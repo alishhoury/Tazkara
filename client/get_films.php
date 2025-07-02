@@ -104,7 +104,7 @@ $films = [
     [
         "id" => 10,
         "title" => "STITCH",
-        "image" => "./assets/film1.jpg",
+        "image" => "./assets/stitch.jpg",
         "genre" => "Family",
         "description" => "A fun family film for all ages.",
         "showtimes" => [
