@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="film-overlay">
                     <div class="overlay-content">
                         <h2>${film.title}</h2>
-                        <p>${film.description}</p>
+                        <p>${film.genre}</p>
                         <button class="btn">Book Now</button>
                     </div>
                     </div>
