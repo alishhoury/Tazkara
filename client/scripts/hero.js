@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="trailer">
             ${videoEmbed}
         </div>
-        <div><a href="#showtimes" class="btn">View Showtimes</a></div>
+        <div><a href="#showtimes" class="button">View Showtimes</a></div>
          <div class="info">
             <p><strong>Genre</strong>:${film.genre}</p>
             <p><strong>Running Time:</strong> ${film.duration }</p>
