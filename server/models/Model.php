@@ -35,7 +35,28 @@ abstract class Model {
             return $query-execute();
         }
 
-        
+        public function update(mysqli $mysqli,array $fields){
+            $set = [];
+            $types = '';
+            $values = [];
+            foreach($fields as $column => $value){
+                $set[] = "$coluumn=?";
+                $types = $types . (is_int($value) ? 'i' : 's');
+                $values = $value;
+            }
+
+            $types = $types . 'i';
+            $values[] = $this->{static::$primary_key};
+            $sql = sprintf("UPDATE %s SET %s WHERE %s = ?", static::$table, implode(', ', $set), static::$primary_key);
+
+             $query = $mysqli->prepare($sql);
+             $query->bind_param($types, ...$values);  //... Unpacks $values into individual arguments
+             return $query->execute();
+        }
+
+
+
+
 
     }
 
