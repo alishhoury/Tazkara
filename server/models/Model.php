@@ -15,5 +15,17 @@ abstract class Model {
         return $data ? new static($data) : null;
     }
 
+    public static function all(mysqli $mysqli){
+        $sql = sprintf("SELECT * from %s", static::$table);
+        $query = $mysqli->prepare($sql);
+        $query->execute();
+        $data = $query->get_result();
 
-}
+        $objects = [];
+        while($row = $data->fetch_assoc()){
+            $objects[] = new static($row);
+        }
+            return $objects;
+        }
+    }
+
