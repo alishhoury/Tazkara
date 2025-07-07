@@ -34,7 +34,7 @@ loginForm.addEventListener('submit', async (e) =>{
   const password = formData.get('password');
 
   try {
-    const response = await axios.post('server/auth.php', {
+    const response = await axios.post('..server/auth.php', {
       action: 'login',
       email: email,
       password: password
@@ -59,7 +59,7 @@ registerForm.addEventListener('submit', async (e) => {
   const email = inputs[1].value;    
   const password = inputs[2].value; 
   try {
-      const response = await axios.post('server/auth.php', {
+      const response = await axios.post('..server/auth.php', {
       action: 'register',
       name: name,
       email: email,
