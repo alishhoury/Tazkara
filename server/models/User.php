@@ -56,17 +56,9 @@ class User extends Model {
         $this->mobile = $mobile;
     }
 
-    public function toArray(){
-    return [
-    "id" => $this->id,
-    "username" => $this->username,
-    "email" => $this->email,
-    "password" => $this->password,
-    "mobile" => $this->mobile,];
-    }   
-
-   
- public static function findBy(mysqli $mysqli, string $column, $value): ?static {
+    
+    
+    public static function findBy(mysqli $mysqli, string $column, $value): ?static {
         $sql = sprintf("SELECT * FROM %s WHERE %s = ?", static::$table, $column);
         $query = $mysqli->prepare($sql);
         $query->bind_param("s", $value);
@@ -75,6 +67,14 @@ class User extends Model {
         $data = $query->get_result()->fetch_assoc();
         return $data ? new static($data) : null;
     }
+    public function toArray(){
+    return [
+    "id" => $this->id,
+    "username" => $this->username,
+    "email" => $this->email,
+    "password" => $this->password,
+    "mobile" => $this->mobile,];
+    }   
 }
 
 
