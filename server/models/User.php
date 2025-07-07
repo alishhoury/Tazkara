@@ -2,7 +2,7 @@
 require_once("Model.php");
 class User extends Model {
     private int $id;
-    private string $name;
+    private string $username;
     private string $email;
     private string $password;
     private string $mobile;
@@ -66,10 +66,15 @@ class User extends Model {
     }   
 
    
-    public static function findByEmail(mysqli $mysqli, string $email): ?User {
-        return static::findBy($mysqli, 'email', $email);
+ public static function findBy(mysqli $mysqli, string $column, $value): ?static {
+        $sql = sprintf("SELECT * FROM %s WHERE %s = ?", static::$table, $column);
+        $query = $mysqli->prepare($sql);
+        $query->bind_param("s", $value);
+        $query->execute();
+        
+        $data = $query->get_result()->fetch_assoc();
+        return $data ? new static($data) : null;
     }
-
 }
 
 
