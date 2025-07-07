@@ -74,7 +74,7 @@ class Film extends Model {
     public function setTrailerUrl(string $trailer_path) {
         $this->trailer_path = $trailer_path;
     }
-    public function setPosterImage(string $poster_image) {
+    public function setPosterImage(string $poster_path) {
         $this->poster_path = $poster_path;
     }
     public function setAgeRestriction(?int $age_rating) {
@@ -94,4 +94,10 @@ class Film extends Model {
             "age_restriction" =>  $this->age_rating
         ];
 }
+
+    public static function findByName(mysqli $mysqli, string $name): ?Film {
+        return static::findBy($mysqli, 'title', $name);
+    }
+
+
 }
