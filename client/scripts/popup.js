@@ -25,3 +25,14 @@ showLogin.addEventListener('click', () => {
   registerForm.classList.remove('active');
   loginForm.classList.add('active');
 });
+
+loginForm.addEventListener('submit', async (e) =>{
+  e.preventDefault();
+
+  const formData = new FormData(loginForm);
+  const email = formData.get('email');
+  const password = formData.get('password');
+
+  
+}
+)
