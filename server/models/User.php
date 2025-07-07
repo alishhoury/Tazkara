@@ -64,6 +64,7 @@ class User extends Model {
     "password" => $this->password,
     "mobile" => $this->mobile,];
     }   
+    
     public static function findByEmail(mysqli $mysqli, string $email): ?User {
     $sql = "SELECT * FROM users WHERE email = ?";
     $query = $mysqli->prepare($sql);
