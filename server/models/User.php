@@ -40,8 +40,8 @@ class User extends Model {
     }
 
 
-     public function setName(string $name){
-        $this->username=$name;
+     public function setName(string $username){
+        $this->username=$username;
     }
     
     public function setEmail(string $email) {
@@ -56,6 +56,26 @@ class User extends Model {
         $this->mobile = $mobile;
     }
 
+    public function toArray(){
+    return [
+    "id" => $this->id,
+    "username" => $this->username,
+    "email" => $this->email,
+    "password" => $this->password,
+    "mobile" => $this->mobile,];
+    }   
+    public static function findByEmail(mysqli $mysqli, string $email): ?User {
+    $sql = "SELECT * FROM users WHERE email = ?";
+    $query = $mysqli->prepare($sql);
+    $query->bind_param("s", $email);
+    $query->execute();
+    $result = $query->get_result();
+    $data = $result->fetch_assoc();
+    if ($data) {
+        return new User($data);
+    }
+    return null;
+}
 
 
 }
