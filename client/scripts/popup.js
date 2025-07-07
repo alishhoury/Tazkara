@@ -33,6 +33,21 @@ loginForm.addEventListener('submit', async (e) =>{
   const email = formData.get('email');
   const password = formData.get('password');
 
-  
-}
-)
+  try {
+    const response = await axios.post('server/auth.php', {
+      action: 'login',
+      email: email,
+      password: password
+    });
+    if (response.data.status === 200){
+      alert('login successful');
+      popup.classList.add('hidden');
+
+    }else {
+      alert('login failed');
+    } }
+      catch(error){
+      console.error(error);
+      alert('login failed');
+    }
+})
