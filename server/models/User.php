@@ -64,19 +64,12 @@ class User extends Model {
     "password" => $this->password,
     "mobile" => $this->mobile,];
     }   
-    
+
+   
     public static function findByEmail(mysqli $mysqli, string $email): ?User {
-    $sql = "SELECT * FROM users WHERE email = ?";
-    $query = $mysqli->prepare($sql);
-    $query->bind_param("s", $email);
-    $query->execute();
-    $result = $query->get_result();
-    $data = $result->fetch_assoc();
-    if ($data) {
-        return new User($data);
+        return static::findBy($mysqli, 'email', $email);
     }
-    return null;
+
 }
 
 
-}
