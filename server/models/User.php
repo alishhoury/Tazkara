@@ -40,4 +40,22 @@ class User extends Model {
     }
 
 
+     public function setName(string $name){
+        $this->username=$name;
+    }
+    
+    public function setEmail(string $email) {
+        $this->email = $email;
+    }
+
+    public function setPassword(string $password) {
+        $this->password = $password;
+    }
+
+    public function setMobile(?string $mobile) {
+        $this->mobile = $mobile;
+    }
+
+
+
 }
