@@ -99,5 +99,9 @@ class Film extends Model {
         return static::findBy($mysqli, 'title', $name);
     }
 
+    public static function findById(mysqli $mysqli, int $id): ?Film {
+    return static::findBy($mysqli, static::$primaryKey, $id);
+}
+
 
 }
