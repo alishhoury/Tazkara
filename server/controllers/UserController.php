@@ -18,7 +18,7 @@ class UserController extends BaseController{
         }
 
         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-        $user = User::create($this->mysqli, data);
+        $user = User::create($this->mysqli, $data);
 
         if ($user){
             return $this->success_response("User registered successfully");
@@ -26,5 +26,16 @@ class UserController extends BaseController{
             return $this->error_response("Registration failed");
         }
     }
+    
+    public function login(array $data) {
+        $user = User::findByEmail($this->mysqli, $data['email']);
 
+        if ($user && password_verify($data['password'], $user->getPassword())) {
+            return $this->success_response("Login successful");
+        }
+    else {
+        return $this->error_response("Invalid credentials");
+    }
+
+}
 }
