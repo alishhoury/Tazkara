@@ -1,6 +1,6 @@
 <?php
-require_once("../connection/connection.php");
-require_once("../models/User.php");
+require_once("./connection/connection.php");
+require_once("./models/User.php");
 require_once("./BaseController.php");
 
 class UserController extends BaseController{

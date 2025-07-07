@@ -6,7 +6,7 @@ abstract class Model {
     protected static string $primary_key = "id";
 
     public static function find(mysqli $mysqli, int $id){
-        $sql = sprintf("SELECT * from %s WHERE %s = ? , static::$table, $static::$primary_key");
+        $sql = sprintf("SELECT * FROM %s WHERE %s = ?", static::$table, static::$primary_key);
         $query = $mysqli->prepare($sql);
         $query->bind_param("i", $id);
         $query->execute();
